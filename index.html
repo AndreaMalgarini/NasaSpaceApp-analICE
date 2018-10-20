@@ -29,7 +29,7 @@
                 <ul class="list-unstyled components">
 
                     <li class="menu-nav active" id="home">
-                        
+
                         <a href="#">HOME</a>
                     </li>
 
@@ -55,23 +55,23 @@
             <div id="content">
                 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black; ">
 
-                   
 
-                        <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color:white;">
-                            <i class="fas fa-align-left"></i>
-                            <img src="images/logo.svg" style="display: flex; width:25px;height:25px">
-                            
-                        </button>
-                        <span id="title" style="font-family: 'Alegreya SC', sans-serif"><a style="color:white;">anal</a>Ice</span>
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color:white;">
+                        <i class="fas fa-align-left"></i>
+                        <img src="images/logo.svg" style="display: flex; width:25px;height:25px">
+
+                    </button>
+                    <span id="title" style="font-family: 'Alegreya SC', sans-serif"><a style="color:white;">anal</a>Ice</span>
 
 
                 </nav>
                 <div id="home_div" class="menu-div row">
                     <p style="color:white;text-align: center; margin: auto;">Welcome to <span id="title" style="font-family: 'Alegreya SC', sans-serif"><a style="color:white;">anal</a>Ice</span>:</p>
                     <p style="color:white;text-align: center; margin: auto;"> discovering the polar cups</p>
-                     <div id="artic_v" class="col-6">
+                    <div id="artic_v" class="col-6">
                         <p>ARTIC</p>
-                         <video src="video/np.mp4" id="video_artic"></video>
+                        <video src="video/np.mp4" id="video_artic"></video>
 
                     </div>
 
@@ -83,66 +83,74 @@
                 </div>
 
                 <div class="menu-div row" style="display:none;" id="artic_div">
-                    <p>ARTIC</p>
+                    <div class="row" style="margin:auto;"><p>ARTIC</p><p><button>+</button></p></div>
                     <div class="row" id="artic_row_year">
-                        
+
                         <input id="valY" type="range" min="1979" max="2018" value="1979" step="1" oninput="showValY(this.value)" onchange="showValY(this.value)" class="slider" />
                         <a style="color: steelblue">Year:</a>
                         <span id="range_art_year">1979</span>
                     </div>
                     <div class="row" id="artic_row_month">
-                        
-                        <input id="valM" type="range" min="01" max="12" value="01" step="1" oninput="showValM(this.value)" onchange="showValM(this.value)" class="slider"/>
+
+                        <input id="valM" type="range" min="01" max="12" value="01" step="1" oninput="showValM(this.value)" onchange="showValM(this.value)" class="slider" />
                         <a style="color: steelblue">Month:</a>
                         <span id="range_art_month">January</span>
                     </div>
-                    
-                    <div id="maps_artic" class="col-6">
-                        
-                        <img id="img_art_maps">
+                    <div class="row">
+                        <div id="maps_artic" class="col-6">
 
+                            <img id="img_art_maps">
+                            <p>Ice Extend</p>
+
+                        </div>
+
+                        <div id="graph_artic" class="col-6">
+
+                            <img id="img_art_graphs">
+                            <p>Ice Concentration</p>
+
+                        </div>
                     </div>
-
-                    <div id="graph_artic" class="col-6">
-
-                        <img id="img_art_graphs">
-
+                    <div class="row" id="artic_info">
+                        <span style="border: solid black">Temperatura: 20°</span>
+                        <span style="border: solid black">Pressione: 20°</span>
                     </div>
-
 
                 </div>
 
+
                 <div class="menu-div row" style="display:none;" id="antartic_div">
-                     <p>ANTARTIC</p>
-                   <div class="row" id="antartic_row_year">
-                        
+                    <p>ANTARTIC</p>
+                    <div class="row" id="antartic_row_year">
+
                         <input id="valY_ant" type="range" min="1979" max="2018" value="1979" step="1" oninput="showValY_ant(this.value)" onchange="showValY_ant(this.value)" class="slider" />
                         <a style="color: steelblue">Year:</a>
                         <span id="range_antart_year">1979</span>
                     </div>
                     <div class="row" id="antartic_row_month">
-                        
-                        <input id="valM_ant" type="range" min="01" max="12" value="01" step="1" oninput="showValM_ant(this.value)" onchange="showValM_ant(this.value)" class="slider"/>
+
+                        <input id="valM_ant" type="range" min="01" max="12" value="01" step="1" oninput="showValM_ant(this.value)" onchange="showValM_ant(this.value)" class="slider" />
                         <a style="color: steelblue">Month:</a>
                         <span id="range_antart_month">January</span>
                     </div>
-                    
+
                     <div id="maps_antartic" class="col-6">
-                        
+
                         <img id="img_antart_maps">
+                        <p>Ice Extend</p>
 
                     </div>
 
                     <div id="graph_antartic" class="col-6">
 
                         <img id="img_antart_graphs">
-
+                        <p>Ice Concentration</p>
                     </div>
                 </div>
 
                 <div class="menu-div row" style="display:none;" id="people_div">
                     <p>PEOPLE</p>
-                    
+
                 </div>
 
 

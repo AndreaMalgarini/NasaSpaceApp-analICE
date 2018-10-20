@@ -72,7 +72,7 @@ function artic(){
     }
    
     document.getElementById("img_art_maps").src = "./images/N_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
-   // document.getElementById("img_art_graphs").src = "./images/N_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
+    document.getElementById("img_art_graphs").src = "./images/N_" + valY + valM + "_conc_blmrbl_hires_v3.0.png";
 }
 
 function showValY(newVal) {
@@ -83,7 +83,7 @@ function showValY(newVal) {
     }
     document.getElementById("range_art_year").innerHTML = newVal;
     document.getElementById("img_art_maps").src = "./images/N_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
-    //document.getElementById("img_art_maps").src = newVal + ".jpg";
+    document.getElementById("img_art_graphs").src = "./images/N_" + valY + valM + "_conc_blmrbl_hires_v3.0.png";
 }
 
 function showValM(newVal) {
@@ -135,7 +135,7 @@ function showValM(newVal) {
 
     document.getElementById("range_art_month").innerHTML = newHtml;
     document.getElementById("img_art_maps").src = "./images/N_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
-    //document.getElementById("img_art_graphs").src = "./images/N_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
+    document.getElementById("img_art_graphs").src = "./images/N_" + valY + valM + "_conc_blmrbl_hires_v3.0.png";
 }
 
 
@@ -151,7 +151,7 @@ function antartic(){
     };
    
     document.getElementById("img_antart_maps").src = "./images/S_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
-   // document.getElementById("img_antart_graphs").src = "./images/S_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
+   document.getElementById("img_antart_graphs").src = "./images/S_" + valY + valM + "_conc_blmrbl_hires_v3.0.png";
 }
 
 function showValY_ant(newVal) {
@@ -162,7 +162,7 @@ function showValY_ant(newVal) {
     }
     document.getElementById("range_antart_year").innerHTML = newVal;
     document.getElementById("img_antart_maps").src = "./images/S_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
-    //document.getElementById("img_art_maps").src = newVal + ".jpg";
+    document.getElementById("img_antart_graphs").src = "./images/S_" + valY + valM + "_conc_blmrbl_hires_v3.0.png";
 }
 
 function showValM_ant(newVal) {
@@ -215,7 +215,7 @@ function showValM_ant(newVal) {
 
     document.getElementById("range_antart_month").innerHTML = newHtml;
    document.getElementById("img_antart_maps").src = "./images/S_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
-    //document.getElementById("img_antart_graphs").src = "./images/S_" + valY + valM + "_extn_blmrbl_hires_v3.0.png";
+    document.getElementById("img_antart_graphs").src = "./images/S_" + valY + valM + "_conc_blmrbl_hires_v3.0.png";
 }
 
 function VideoPlayArt(){
