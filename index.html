@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Benvenuti</title>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="row button" align="center">
+        <a class="btn-play" id="play_button">DISCOVER ICEs</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="wrapper" id="homepage">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3></h3>
+                </div>
+
+                <ul class="list-unstyled components">
+
+                    <li class="menu-nav active" id="home">
+                        <a href="#">HOME</a>
+                    </li>
+
+                    <li class="menu-nav" id="artic">
+                        <a href="#">ARTIC</a>
+                    </li>
+                    <li class=menu-nav id="antartic">
+                        <a href="#">ANTARTIC</a>
+                    </li>
+
+                    <li class="menu-nav" id="people">
+                        <a href="#">PEOPLE</a>
+                    </li>
+
+                    <li class="menu-nav" id="about">
+                        <a href="#">ABOUT</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <!-- Page Content -->
+            <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black; ">
+
+                   
+
+                        <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color:white;">
+                            <i class="fas fa-align-left"></i>
+                            <span>MENU</span>
+                        </button>
+                        <span id="title"><a style="color:white;">ANAL</a>ICE</span>
+
+
+                </nav>
+                <div id="home_div" class="menu-div row">
+                    <p style="color:white;text-align: center; margin: auto;">Welcome to ANALICE: discovering the polar cups</p>
+                     <div id="artic_v" class="col-6">
+                        <p>ARTIC</p>
+                         <video src="video/np.mp4" id="video_artic"></video>
+
+                    </div>
+
+                    <div id="antartic_v" class="col-6">
+                        <p>ANTARTIC</p>
+                        <video src="video/sp.mp4" id="video_antartic"></video>
+
+                    </div>
+                </div>
+
+                <div class="menu-div row" style="display:none;" id="artic_div">
+                    <p>ARTIC</p>
+                    <div class="row" id="artic_row_year">
+                        
+                        <input id="valY" type="range" min="1979" max="2018" value="1979" step="1" oninput="showValY(this.value)" onchange="showValY(this.value)" class="slider" />
+                        <a style="color: steelblue">Year:</a>
+                        <span id="range_art_year">1979</span>
+                    </div>
+                    <div class="row" id="artic_row_month">
+                        
+                        <input id="valM" type="range" min="01" max="12" value="01" step="1" oninput="showValM(this.value)" onchange="showValM(this.value)" class="slider"/>
+                        <a style="color: steelblue">Month:</a>
+                        <span id="range_art_month">January</span>
+                    </div>
+                    
+                    <div id="maps_artic" class="col-6">
+                        
+                        <img id="img_art_maps">
+
+                    </div>
+
+                    <div id="graph_artic" class="col-6">
+
+                        <img id="img_art_graphs">
+
+                    </div>
+
+
+                </div>
+
+                <div class="menu-div row" style="display:none;" id="antartic_div">
+                     <p>ANTARTIC</p>
+                   <div class="row" id="antartic_row_year">
+                        
+                        <input id="valY_ant" type="range" min="1979" max="2018" value="1979" step="1" oninput="showValY_ant(this.value)" onchange="showValY_ant(this.value)" class="slider" />
+                        <a style="color: steelblue">Year:</a>
+                        <span id="range_antart_year">1979</span>
+                    </div>
+                    <div class="row" id="antartic_row_month">
+                        
+                        <input id="valM_ant" type="range" min="01" max="12" value="01" step="1" oninput="showValM_ant(this.value)" onchange="showValM_ant(this.value)" class="slider"/>
+                        <a style="color: steelblue">Month:</a>
+                        <span id="range_antart_month">January</span>
+                    </div>
+                    
+                    <div id="maps_antartic" class="col-6">
+                        
+                        <img id="img_antart_maps">
+
+                    </div>
+
+                    <div id="graph_antartic" class="col-6">
+
+                        <img id="img_antart_graphs">
+
+                    </div>
+                </div>
+
+                <div class="menu-div row" style="display:none;" id="people_div">
+                    <p>PEOPLE</p>
+                    
+                </div>
+
+
+                <div class="menu-div" style="display:none;" id="about_div">
+                    <p>ABOUT</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./js/d3.v5.js"></script>
+    <script src="./js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
