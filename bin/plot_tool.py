@@ -1,5 +1,20 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import json
+
+# Set fonts for all the plots
+SMALL_SIZE = 12
+MEDIUM_SIZE = 15
+BIGGER_SIZE = 18
+
+plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=BIGGER_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
 # Antarctic height
 file_path = '/home/andrea/PycharmProjects/NasaSpaceApp-analICE/Data/dh_antarctic.csv'
@@ -14,14 +29,28 @@ for item in time:
 
 start=1994
 dict_dh = {}
+x = []
+y = []
 for ix, dhh in enumerate(dh_m):
     dict_dh[str(start)] = {}
     dict_dh[str(start)]['thick_m'] = []
     if time_clean[ix]==start:
-       dict_dh[str(start)]['thick_m'] = str(dhh)
+       dict_dh[str(start)]['thick_m'] = str.format("{0:.3f}", dhh)
+       x.append(time_clean[ix])
+       y.append(dhh)
        start = start +1
     else:
         continue
+
+fig1 = plt.figure(0)
+plt.title('Ice sheet thickness variation')
+label = ['thickness variation']
+
+plt.plot(x, y, label=label[0], lw=4)
+plt.ylabel('Epoch')
+plt.ylabel('Thickness change [m]')
+plt.legend()
+plt.autoscale(enable=True, axis='x', tight=True)
 
 # Global temp variation
 
@@ -36,6 +65,8 @@ for item in time:
     time_clean.append(int(np.floor(item)))
 
 start=time_clean[0]
+x = []
+y = []
 
 for ix, dtt in enumerate(dt_m):
     try:
@@ -45,10 +76,22 @@ for ix, dtt in enumerate(dt_m):
         dict_dh[str(start)]['temp'] = []
 
     if time_clean[ix]==start:
-       dict_dh[str(start)]['temp'] = str(dtt)
+       dict_dh[str(start)]['temp'] = str.format("{0:.3f}", dtt)
+       x.append(time_clean[ix])
+       y.append(dtt)
        start = start - 1
     else:
         continue
+
+fig1 = plt.figure(0)
+plt.title('Global temperature variation')
+label = ['temp variation']
+
+plt.plot(x, y, lw=4)
+plt.ylabel('Epoch')
+plt.ylabel('Temperature variation [C]')
+plt.legend()
+plt.autoscale(enable=True, axis='x', tight=True)
 
 # World pop
 
@@ -68,8 +111,9 @@ world_pop = [3032160395, 3073368589, 3126509809, 3191786428, 3257459749,
              6683223772, 6766296679, 6849569339, 6932869743, 7014983968, 7099557649, 7185137526,
              7271322821, 7357559450, 7444157356, 7530360149]
 
-start=time_clean[0]
-
+start=time[0]
+x = []
+y = []
 for ix, wpp in enumerate(world_pop):
     try:
         dict_dh[str(start)]['temp'] = []
@@ -77,11 +121,23 @@ for ix, wpp in enumerate(world_pop):
         dict_dh[str(start)] = {}
         dict_dh[str(start)]['world_pop'] = []
 
-    if time_clean[ix]==start:
-       dict_dh[str(start)]['world_pop'] = str(wpp)
+    if time[ix]==start:
+       wpp = wpp * 10 ** -9
+       dict_dh[str(start)]['world_pop'] = str.format("{0:.3f}", wpp)
+       x.append(start)
+       y.append(wpp)
        start = start + 1
     else:
         continue
+
+fig1 = plt.figure(0)
+plt.title('World population')
+
+plt.plot(x, y, lw=4)
+plt.ylabel('Epoch')
+plt.ylabel('Total number of people [Billion]')
+plt.legend()
+plt.autoscale(enable=True, axis='x', tight=True)
 
 # Global sea level variation
 
@@ -101,10 +157,19 @@ y_int = np.interp(x_t, year_sl, sea_list)
 
 for ix, sl_year in enumerate(x_t):
     try:
-        dict_dh[str(sl_year)]['sea_lvl_mm'] = y_int[ix]
+        dict_dh[str(sl_year)]['sea_lvl_mm'] = str.format("{0:.3f}", y_int[ix])
     except KeyError:
         dict_dh[str(sl_year)] = {}
-        dict_dh[str(sl_year)]['sea_lvl_mm'] = y_int[ix]
+        dict_dh[str(sl_year)]['sea_lvl_mm'] = str.format("{0:.3f}", y_int[ix])
+
+fig1 = plt.figure(0)
+plt.title('Global mean sea level [GMSL]')
+
+plt.plot(x_t, y_int, lw=4)
+plt.xlabel('Epoch')
+plt.ylabel('GMSL [mm]')
+plt.legend()
+plt.autoscale(enable=True, axis='x', tight=True)
 
 # Extent data
 
@@ -121,4 +186,5 @@ for sheet in sheets_to_read:
             dict_dh[str(key)][sheet] = value
 
 
-
+# with open('pole_data2.json', 'w') as fp:
+#     json.dump(dh_m, fp)
