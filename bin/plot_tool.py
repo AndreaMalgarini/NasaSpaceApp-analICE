@@ -77,6 +77,7 @@ for ix, dtt in enumerate(dt_m):
 
     if time_clean[ix]==start:
        dict_dh[str(start)]['temp'] = str.format("{0:.3f}", dtt)
+       print(type(dtt))
        x.append(time_clean[ix])
        y.append(dtt)
        start = start - 1
@@ -186,5 +187,5 @@ for sheet in sheets_to_read:
             dict_dh[str(key)][sheet] = value
 
 
-# with open('pole_data2.json', 'w') as fp:
-#     json.dump(dh_m, fp)
+with open('pole_data2.json', 'w') as fp:
+    json.dump(dict_dh, fp)
