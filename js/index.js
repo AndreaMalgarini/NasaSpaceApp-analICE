@@ -1979,7 +1979,7 @@ function artic_swal(valY, valM) {
 
     $("#more_info_artic").empty();
     console.log(window.app[valY]);
-    var el = "<a >Temperatura:" + window.app[valY].temp + " °C</a><a>Thickness:" + window.app[valY].thick_m + " mm</a><a>Global Sea Level:" + window.app[valY].sea_lvl_mm + " mm</a><a>Effective Ares:" + window.app[valY]["NH-Area"] + " Mkmq</a><a>Extend Area:" + window.app[valY]["NH-Extent"] + " Mkmq</a>";
+    var el = "<a >Temp:" + window.app[valY].temp + " °C</a><a>Thickness:" + window.app[valY].thick_m + " mm</a><a>Sea Level:" + window.app[valY].sea_lvl_mm + " mm</a><a>Eff Area:" + window.app[valY]["NH-Area"] + " Mkmq</a><a>Extend Area:" + window.app[valY]["NH-Extent"] + " Mkmq</a>";
 
     $("#more_info_artic").html(el);
 
@@ -1988,7 +1988,7 @@ function artic_swal(valY, valM) {
 
 function antartic_swal(valY, valM) {
     $("#more_info_antartic").empty();
-    var el = "<a>Temperatura:" + window.app[valY].temp + " °C</a><a>Global Sea Level:" + window.app[valY].sea_lvl_mm + " mm</a><a>Effective Ares:" + window.app[valY]["SH-Area"] + " Mkmq</a><a>Extend Area:" + window.app[valY]["SH-Extent"] + " Mkmq</a>";
+    var el = "<a>Temp:" + window.app[valY].temp + " °C</a><a>Sea Level:" + window.app[valY].sea_lvl_mm + " mm</a><a>Eff Area:" + window.app[valY]["SH-Area"] + " Mkmq</a><a>Extend Area:" + window.app[valY]["SH-Extent"] + " Mkmq</a>";
 
     $("#more_info_antartic").html(el);
 }
