@@ -1988,7 +1988,6 @@ function artic_swal(valY, valM) {
 
 function antartic_swal(valY, valM) {
     $("#more_info_antartic").empty();
-    console.log(window.app[valY]);
     var el = "<a>Temperatura:" + window.app[valY].temp + " °C</a><a>Global Sea Level:" + window.app[valY].sea_lvl_mm + " mm</a><a>Effective Ares:" + window.app[valY]["SH-Area"] + " Mkmq</a><a>Extend Area:" + window.app[valY]["SH-Extent"] + " Mkmq</a>";
 
     $("#more_info_antartic").html(el);
