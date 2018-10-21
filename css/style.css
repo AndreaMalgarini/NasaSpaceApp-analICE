@@ -81,6 +81,8 @@ a[data-toggle="collapse"] {
     }
 }
 
+
+
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 2em;
@@ -278,4 +280,34 @@ img{
     margin: auto;
     width: 70%;
 }
+
+#artic_add, #antartic_add, #more_sat{
+    color:black;
+    margin: auto;
+    font-size: 2vmin;
+    transition: all 0.3s;
+    height:50%;
+    width: 8vmin;
+    vertical-align: middle;
+    border-color: transparent;
+    text-decoration: underline;
+    
+}
+
+#artic_add:hover {
+  background: white;
+  color: slategray;
+}
+
+#antartic_add:hover {
+  background: white;
+  color: slategray;
+}
+
+#more_sat:hover {
+  background: white;
+  color: slategray;
+}
+
+
 

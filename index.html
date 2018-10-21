@@ -39,6 +39,9 @@
                     <li class=menu-nav id="antartic">
                         <a href="#">ANTARTIC</a>
                     </li>
+                    <li class=menu-nav id="sat">
+                        <a href="#">POLAR SATELLITES</a>
+                    </li>
 
                     <li class="menu-nav" id="people">
                         <a href="#">PEOPLE</a>
@@ -83,7 +86,10 @@
                 </div>
 
                 <div class="menu-div row" style="display:none;" id="artic_div">
-                    <div class="row" style="margin:auto;"><p>ARTIC</p><p><button>+</button></p></div>
+                    <div class="row" style="margin:auto;">
+                        <p style="margin:auto;">ARTIC</p>
+                       <a class="btn btn-info" id="artic_add">More Info</a>
+                    </div>
                     <div class="row" id="artic_row_year">
 
                         <input id="valY" type="range" min="1979" max="2018" value="1979" step="1" oninput="showValY(this.value)" onchange="showValY(this.value)" class="slider" />
@@ -111,16 +117,19 @@
 
                         </div>
                     </div>
-                    <div class="row" id="artic_info">
-                        <span style="border: solid black">Temperatura: 20°</span>
-                        <span style="border: solid black">Pressione: 20°</span>
+                    <div id="more_info_artic" class="row">
                     </div>
+
 
                 </div>
 
 
                 <div class="menu-div row" style="display:none;" id="antartic_div">
-                    <p>ANTARTIC</p>
+                     <div class="row" style="margin:auto;">
+                        <p style="margin:auto;">ANTARTIC</p>
+                         <a class="btn btn-info" id="antartic_add">More Info</a>
+                    </div>
+                    
                     <div class="row" id="antartic_row_year">
 
                         <input id="valY_ant" type="range" min="1979" max="2018" value="1979" step="1" oninput="showValY_ant(this.value)" onchange="showValY_ant(this.value)" class="slider" />
@@ -133,7 +142,7 @@
                         <a style="color: steelblue">Month:</a>
                         <span id="range_antart_month">January</span>
                     </div>
-
+<div class="row">
                     <div id="maps_antartic" class="col-6">
 
                         <img id="img_antart_maps">
@@ -147,15 +156,63 @@
                         <p>Ice Concentration</p>
                     </div>
                 </div>
+                     <div id="more_info_antartic" class="row">
+                    </div>
+                    
+                    
+                </div>
 
+                <div class="menu-div" style="display:none;" id="sat_div">
+                    <p>POLAR SATELLITES</p>
+                   
+                    <div id="sat_view" class="col-10" style="margin:auto;">
+                        <img style="width=120%;" src="./images/noaa.jpg">
+                        <p>NOAA 20</p>
+
+                    </div>
+
+                    <div class="col-8" style="margin:auto;">
+                        <div class= row id="sat_info"> </div>
+                        
+                        <div class=row>    <a class="btn" style="background-color: steelblue; color:white;">Other satellite</a></div>
+                        
+
+                    </div>
+                </div>
+                
                 <div class="menu-div row" style="display:none;" id="people_div">
                     <p>PEOPLE</p>
+                    <div class="row">
+                        <p>MICOL SPITALE</p>
+                        <p>DAVIDE LEONE</p>
+                        <p>ANDREA MALGARINI</p>
+                        <p>ALESSANDRO PALLOTTOLA</p>
+                    </div>
 
                 </div>
 
 
-                <div class="menu-div" style="display:none;" id="about_div">
+                <div class="menu-div" style="display:none; margin:auto;" id="about_div">
                     <p>ABOUT</p>
+                    <a style="font-weight:600;">What Is AnalIce?</a>
+
+AnalIce is a Tool for polar Ice data processing and consumption under development. It aggregates various data sources to show causes, effects of polar ice melting for both Ice-shelf and sea-Ice.
+Monitoring IIce shelf
+<br>
+                    <a style="font-weight:600;">What’s the scope of AnalIce?</a>
+
+
+
+
+
+With this tool we want to give an access to data on polar Ice as easy, smart and trustworthy as it can get. An hub for both researchers and the general public.
+And not only that, we want to give also the possibility to process them in a fast integrated way. 
+<br>
+<a style="font-weight:600;">Why?</a>
+
+A lot of controversy arises when talking about ice levels and polar temperature. In order to face the serious future challanges  posed by climate change this hub, can be a strong and useful tool in the hands of the scientific community.
+
+
                 </div>
 
 
@@ -169,6 +226,7 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="./js/d3.v5.js"></script>
+    <script src="./js/sweetalert2.all.min.js"></script>
     <script src="./js/index.js"></script>
 
 
